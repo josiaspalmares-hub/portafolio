@@ -37,24 +37,34 @@ img { max-width: 100%; display: block; }
 a { color: inherit; }
 
 /* ---------- 3. Encabezado ---------- */
-.encabezado {
-  position: fixed;          /* se queda pegado arriba al bajar */
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;              /* por encima del resto */
-  display: flex;            /* pone los hijos uno al lado del otro */
-  justify-content: space-between; /* logo a un lado, menú al otro */
+.encabezado { 
+  position: fixed; 
+  top: 16px; 
+  left: 50%; 
+  transform: translateX(-50%);
+  z-index: 10; 
+  display: flex;
   align-items: center;
-  padding: 16px var(--margen);
-  background: rgba(14, 17, 24, 0.7);
-  backdrop-filter: blur(12px); /* efecto vidrio esmerilado */
-  border-bottom: 1px solid var(--linea);
+  gap: 28px; 
+  padding: 8px 8px 8px 18px;
+  background: rgba(22,25,36, 0.6);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--linea);
+  border-radius: 999px;
+} 
+.encabezado__logo img { width: 30px; height: 30px; }
+.encabezado__logo { flex-shrink: 0;}
+.encabezado__menu {display: flex; gap: 4px }
+.encabezado__menu a { 
+  padding: 8px 16px; 
+  border-radius: 999px; 
+  text-decoration: none;
+  font-size: 0.95rem;
+  color: var(--texto-2);
 }
-.encabezado__menu { display: flex; gap: 28px; }
-.encabezado__menu a { text-decoration: none; font-size: 0.95rem; color: var(--texto-2); transition: color 0.2s; }
-.encabezado__menu a:hover { color: var(--texto); }
-
+.encabezado__menu a:hover{
+  color: var(--texto);
+  background: rgba(244,246,250, 0.08);}
 /* ---------- 4. Portada (LECCIÓN 1) ----------
    Estas clases ya están listas para lo que vas a escribir en el HTML. */
 .hero {
