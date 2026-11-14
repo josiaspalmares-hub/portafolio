@@ -14,6 +14,7 @@
   --texto: #f4f6fa;       /* blanco del logo */
   --texto-2: #9aa3b5;     /* gris para textos secundarios */
   --azul: #2f6bff;        /* el punto azul del logo: se usa poco, para lo importante */
+  --azul-claro: #6f97ff;  /* para textos pequeños en azul: se lee mejor sobre el negro */
   --linea: rgba(244, 246, 250, 0.12);
 
   --letra: 'Space Grotesk', system-ui, sans-serif;
@@ -81,7 +82,7 @@ a { color: inherit; }
   font-size: 0.85rem;
   letter-spacing: 0.2em;    /* separación entre letras */
   text-transform: uppercase;/* todo en mayúsculas */
-  color: var(--azul);
+  color: var(--azul-claro);
 }
 .hero__titulo {
   margin: 0;
@@ -127,12 +128,12 @@ gap: 10px;
 width: fit-content;
 padding: 16px 28px;
 border-radius: 999px;
-background: var(--azul);
+background: #2559e8;  /* un azul un poquito más oscuro para que la letra blanca se lea bien */
 color: #fff;
 font-weight: 500;
 text-decoration: none;
 transition: transform 0.2s, background-color 0.2s;}
-.boton:hover { background: #4b80ff; transform: translateY(-2px); }
+.boton:hover { background: #2f6bff; transform: translateY(-2px); }
 
   /* ---------- 5. Trabajos ---------- */
  .trabajos, .servicios, .tecnologias { padding: 100px var(--margen); max-width: 1200px; }
@@ -161,15 +162,15 @@ transition: transform 0.3s, border-color 0.3s;
   font-size: 0.8rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--azul);
+  color: var(--azul-claro);
 }
 .tarjeta__nombre { margin: 6px 20px 0; font-size: 1.5rem; }
 .tarjeta__texto { margin: 8px 20px 0; font-size: 0.95rem; color: var(--texto-2); }
 .tarjeta__enlace { display: inline-block; margin: 16px 20px 24px; font-weight: 500; text-decoration: none; }
-.tarjeta__enlace:hover { color: var(--azul); }
+.tarjeta__enlace:hover { color: var(--azul-claro); }
 .trabajos__nota { margin: 32px 0 0; color: var(--texto-2); }
 .trabajos__nota strong { color: var(--texto); }
-.trabajos__nota a { color: var(--azul); font-weight: 500; text-decoration: none; }
+.trabajos__nota a { color: var(--azul-claro); font-weight: 500; text-decoration: none; }
 
  /* ---------- 6. Servicios ---------- */
  .servicios__lista {
@@ -271,6 +272,37 @@ transform: translate(-999px, -999px);
 transition: transform 0.15s ease-out;}
 @media (hover: none) { .brillo { display: none; } }
 
+/* ---------- 9. Contacto y pie (Lección 8) ---------- */
+.contacto { padding: 140px var(--margen) 120px; max-width: 1200px; }
+/* La frase gigante de cierre, con la palabra final en la letra elegante */
+.contacto__frase {
+  margin: 0;
+  font-size: clamp(3rem, 1rem + 8vw, 8rem);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+.contacto__frase em { font-family: var(--letra-elegante); font-weight: 400; text-transform: none; color: var(--azul); }
+.contacto__texto { max-width: 36rem; margin: 32px 0 40px; font-size: 1.15rem; color: var(--texto-2); }
+.contacto__acciones { display: flex; flex-wrap: wrap; gap: 14px; }
+/* Botón secundario: mismo tamaño que el azul, pero solo con borde */
+.boton--borde { background: transparent; border: 1px solid var(--linea); color: var(--texto); }
+.boton--borde:hover { background: rgba(244, 246, 250, 0.06); border-color: var(--texto-2); }
+
+.pie {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 28px;
+  padding: 28px var(--margen);
+  border-top: 1px solid var(--linea);
+  font-size: 0.9rem;
+  color: var(--texto-2);
+}
+.pie p { margin: 0; flex: 1; }
+.pie a { text-decoration: none; transition: color 0.2s; }
+.pie a:hover { color: var(--texto); }
+
 /* ---------- 6. Teléfono: ajustes para pantallas angostas ---------- */
 @media (max-width: 640px) {
 .encabezado { gap: 10px; padding: 6px 6px 6px 14px; }
@@ -279,4 +311,6 @@ transition: transform 0.15s ease-out;}
 .tecnologias { grid-template-columns: 1fr; }
 .escena { padding: 10px 0 30px; }
 .teclado { width: 74%; padding: 14px; gap: 9px; }
+.pie { flex-direction: column; text-align: center; }
+.pie p { flex: none; }
 }
