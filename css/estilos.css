@@ -135,7 +135,7 @@ transition: transform 0.2s, background-color 0.2s;}
 .boton:hover { background: #4b80ff; transform: translateY(-2px); }
 
   /* ---------- 5. Trabajos ---------- */
- .trabajos, .servicios { padding: 100px var(--margen); max-width: 1200px; }
+ .trabajos, .servicios, .tecnologias { padding: 100px var(--margen); max-width: 1200px; }
  .seccion__titulo {
  margin: 0 0 40px;
  font-size: clamp(2rem, 1.4rem + 3vw, 3.5rem);
@@ -192,8 +192,53 @@ background: rgba(47, 107, 255, 0.12)}
 .servicio__nombre { margin: 20px 0 8px; font-size: 1.25rem; }
 .servicio__texto { margin: 0; font-size: 0.95rem; color: var(--texto-2); }
 
+/* ---------- 7. Teclado de tecnologías ---------- */
+.teclado {
+list-style: none;
+margin: 0;
+padding: 22px;
+display: grid;
+grid-template-columns: repeat(6, 1fr);
+gap: 14px;
+max-width: 660px;
+background: #0a0d13;
+border: 1px solid var(--linea);
+border-radius: 26px;
+box-shadow: 0 40px 80px -30px rgba(47, 107, 255, 0.35);
+transform: perspective(1000px) rotateX(16deg);}
+.tecla {
+position: relative;
+aspect-ratio: 1;
+display: grid;
+place-items: center;
+border-radius: 16px;
+background: linear-gradient(#1f2433, #151a25);
+border: 1px solid rgba(255, 255, 255, 0.06);
+box-shadow: 0 6px 0 #05070b, 0 12px 20px rgba(0, 0, 0, 0.45);
+transition: transform 0.12s, box-shadow 0.12s;}
+.tecla img { width: 58%; height: auto; }
+.tecla:hover {
+z-index: 2;
+transform: translateY(5px);
+box-shadow: 0 1px 0 #05070b, 0 3px 8px rgba(0, 0, 0, 0.45);}
+.tecla::after {
+content: attr(data-nombre);
+position: absolute;
+bottom: -34px;
+padding: 4px 10px;
+border-radius: 999px;
+background: var(--azul);
+font-size: 0.75rem;
+color: #fff;
+white-space: nowrap;
+opacity: 0;
+transition: opacity 0.2s;}
+.tecla:hover::after { opacity: 1; }
+
 /* ---------- 6. Teléfono: ajustes para pantallas angostas ---------- */
 @media (max-width: 640px) {
 .encabezado { gap: 10px; padding: 6px 6px 6px 14px; }
 .encabezado__menu { gap: 0; } 
-.encabezado__menu a { padding: 8px 12px; font-size: 0.85rem; } }
+.encabezado__menu a { padding: 8px 12px; font-size: 0.85rem; }
+.teclado { grid-template-columns: repeat(4, 1fr); gap: 10px; padding: 16px; }
+}

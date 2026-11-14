@@ -18,10 +18,11 @@ revisamos (capturas en `../referencias/portafolios/` y `../referencias/landonorr
 
 ## Lecciones (tú escribes, yo reviso)
 
-1. **HTML de la portada**: etiquetas, clases y anidar. ← estamos aquí
-2. **CSS del menú en píldora**: flexbox, bordes redondos, vidrio esmerilado.
-3. **JavaScript del subtítulo que se escribe solo**: variables, listas y temporizadores.
-4. **Tarjetas de trabajos y servicios**: grid de CSS y diseño para teléfono.
-5. **Teclado de tecnologías**: transformaciones y animaciones en CSS.
-6. **Brillo que sigue al cursor y pantalla de carga**: eventos del mouse en JavaScript.
-7. **Cierre, prueba en teléfono y publicar en Vercel** con tu dominio.
+1. ✅ **HTML de la portada**: etiquetas, clases y anidar.
+2. ✅ **CSS del menú en píldora**: flexbox, bordes redondos, vidrio esmerilado, teléfono.
+3. ✅ **JavaScript del subtítulo que se escribe solo**: variables, listas, funciones y temporizadores.
+4. ✅ **Trabajos**: CSS Grid, imágenes y enlaces.
+5. ✅ **Servicios**: íconos, alt decorativo y selectores con coma.
+6. ✅ **Teclado de tecnologías**: listas, data-, sombras, degradados, 3D y ::after.
+7. **Pantalla de carga y brillo que sigue al cursor**: eventos del mouse en JavaScript.
+8. **Contacto, cierre y publicar en Vercel**.
