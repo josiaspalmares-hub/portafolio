@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="25 22 156 156" role="img" aria-label="JP">
+  <defs>
+    <!-- Hueco alrededor del nodo: lo separa del trazo para que se lea como un punto de conexión -->
+    <mask id="hueco" maskUnits="userSpaceOnUse" x="0" y="0" width="200" height="200">
+      <rect width="200" height="200" fill="#fff"/>
+      <circle cx="104" cy="94" r="18.5" fill="#000"/>
+    </mask>
+  </defs>
+  <path mask="url(#hueco)" d="M52 128 Q52 158 80 158 Q104 158 104 132 L104 42 L128 42 Q154 42 154 68 Q154 94 128 94 L104 94" fill="none" stroke="#F4F6FA" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="104" cy="94" r="11.5" fill="#2F6BFF"/>
+</svg>

@@ -1,0 +1,116 @@
+/* =====================================================================
+   ESTILOS DEL PORTAFOLIO
+   CSS = cómo se ve cada cosa. Se lee así:
+     selector { propiedad: valor; }
+   El selector dice A QUÉ se aplica (.hero = todo lo que tenga class="hero").
+   ===================================================================== */
+
+/* ---------- 1. Colores y medidas de la marca (sacados de tu logo JP) ----------
+   Se guardan una vez en "variables" (--nombre) y se usan en todo el archivo con var(--nombre).
+   Si mañana quieres otro azul, lo cambias solo aquí. */
+:root {
+  --fondo: #0e1118;       /* casi negro, el fondo del logo */
+  --fondo-2: #161a24;     /* un poquito más claro, para tarjetas */
+  --texto: #f4f6fa;       /* blanco del logo */
+  --texto-2: #9aa3b5;     /* gris para textos secundarios */
+  --azul: #2f6bff;        /* el punto azul del logo: se usa poco, para lo importante */
+  --linea: rgba(244, 246, 250, 0.12);
+
+  --letra: 'Space Grotesk', system-ui, sans-serif;
+  --letra-elegante: 'Instrument Serif', Georgia, serif;
+
+  --margen: clamp(20px, 5vw, 64px); /* clamp = mínimo, ideal, máximo: se adapta al ancho de la pantalla */
+}
+
+/* ---------- 2. Base: lo que aplica a toda la página ---------- */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: var(--letra);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+
+/* ---------- 3. Encabezado ---------- */
+.encabezado {
+  position: fixed;          /* se queda pegado arriba al bajar */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;              /* por encima del resto */
+  display: flex;            /* pone los hijos uno al lado del otro */
+  justify-content: space-between; /* logo a un lado, menú al otro */
+  align-items: center;
+  padding: 16px var(--margen);
+  background: rgba(14, 17, 24, 0.7);
+  backdrop-filter: blur(12px); /* efecto vidrio esmerilado */
+  border-bottom: 1px solid var(--linea);
+}
+.encabezado__menu { display: flex; gap: 28px; }
+.encabezado__menu a { text-decoration: none; font-size: 0.95rem; color: var(--texto-2); transition: color 0.2s; }
+.encabezado__menu a:hover { color: var(--texto); }
+
+/* ---------- 4. Portada (LECCIÓN 1) ----------
+   Estas clases ya están listas para lo que vas a escribir en el HTML. */
+.hero {
+  min-height: 100vh;        /* 100vh = alto completo de la pantalla */
+  display: flex;
+  flex-direction: column;   /* los hijos uno debajo del otro */
+  justify-content: center;
+  padding: 120px var(--margen) 80px;
+  max-width: 1200px;
+}
+.hero__etiqueta {
+  margin: 0 0 20px;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;    /* separación entre letras */
+  text-transform: uppercase;/* todo en mayúsculas */
+  color: var(--azul);
+}
+.hero__titulo {
+  margin: 0;
+  font-size: clamp(2.75rem, 1.5rem + 6vw, 6.5rem);
+  line-height: 0.95;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+/* <em> dentro del título: la palabra en letra elegante cursiva (la mezcla que viste en Lando Norris) */
+.hero__titulo em {
+  font-family: var(--letra-elegante);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--azul);
+}
+.hero__texto {
+  max-width: 34rem;
+  margin: 28px 0 40px;
+  font-size: 1.15rem;
+  color: var(--texto-2);
+}
+
+/* ---------- 5. Botones ---------- */
+.boton {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;       /* el botón mide lo que mide su texto */
+  padding: 16px 28px;
+  border-radius: 999px;     /* bordes totalmente redondos (píldora) */
+  background: var(--azul);
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  transition: transform 0.2s, background-color 0.2s;
+}
+.boton:hover { background: #4b80ff; transform: translateY(-2px); } /* al pasar el mouse: sube un poquito */
+
+/* ---------- 6. Teléfono: ajustes para pantallas angostas ---------- */
+@media (max-width: 640px) {
+  .encabezado__menu { gap: 18px; }
+  .encabezado__menu a { font-size: 0.85rem; }
+}
