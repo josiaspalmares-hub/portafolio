@@ -192,53 +192,60 @@ background: rgba(47, 107, 255, 0.12)}
 .servicio__nombre { margin: 20px 0 8px; font-size: 1.25rem; }
 .servicio__texto { margin: 0; font-size: 0.95rem; color: var(--texto-2); }
 
-/* ---------- 7. Teclado de tecnologías ---------- */
+/* ---------- 7. Teclado de tecnologías (3D de lado, como un teclado real) ---------- */
+.tecnologias { display: grid; grid-template-columns: 1fr 1.3fr; align-items: center; gap: 40px; }
+.tecnologias__nombre {
+  margin: 0;
+  min-height: 1em;
+  font-size: clamp(2.5rem, 1.5rem + 4vw, 4.5rem);
+  line-height: 1;
+  color: var(--azul);
+}
+.tecnologias__ayuda { margin: 12px 0 0; color: var(--texto-2); }
+.escena { perspective: 1600px; display: grid; place-items: center; padding: 40px 0; }
 .teclado {
-list-style: none;
-margin: 0;
-padding: 22px;
-display: grid;
-grid-template-columns: repeat(6, 1fr);
-gap: 14px;
-max-width: 660px;
-background: #0a0d13;
-border: 1px solid var(--linea);
-border-radius: 26px;
-box-shadow: 0 40px 80px -30px rgba(47, 107, 255, 0.35);
-transform: perspective(1000px) rotateX(16deg);}
-.tecla {
-position: relative;
-aspect-ratio: 1;
-display: grid;
-place-items: center;
-border-radius: 16px;
-background: linear-gradient(#1f2433, #151a25);
-border: 1px solid rgba(255, 255, 255, 0.06);
-box-shadow: 0 6px 0 #05070b, 0 12px 20px rgba(0, 0, 0, 0.45);
-transition: transform 0.12s, box-shadow 0.12s;}
-.tecla img { width: 58%; height: auto; }
-.tecla:hover {
-z-index: 2;
-transform: translateY(5px);
-box-shadow: 0 1px 0 #05070b, 0 3px 8px rgba(0, 0, 0, 0.45);}
-.tecla::after {
-content: attr(data-nombre);
-position: absolute;
-bottom: -34px;
-padding: 4px 10px;
-border-radius: 999px;
-background: var(--azul);
-font-size: 0.75rem;
-color: #fff;
-white-space: nowrap;
-opacity: 0;
-transition: opacity 0.2s;}
-.tecla:hover::after { opacity: 1; }
+  list-style: none;
+  margin: 0;
+  padding: 22px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  width: min(100%, 460px);
+  background: linear-gradient(145deg, #141927, #0a0d13);
+  border-radius: 26px;
+  box-shadow: 0 2px 0 #1d2333, 0 22px 0 #05070b, 0 60px 80px -20px rgba(47, 107, 255, 0.35);
+  transform: rotateX(52deg) rotateZ(-32deg);
+  transform-style: preserve-3d;
+}
+/* La tecla (li) es el área que detecta el mouse y no se mueve; la cara es lo que se ve y se hunde.
+   Si se hundiera la tecla entera, se saldría de debajo del mouse y parpadearía. */
+.tecla { aspect-ratio: 1; cursor: pointer; }
+.tecla__cara {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: radial-gradient(circle at 50% 40%, #262c3d, #171b27 70%);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 2px 0 #2a3144, 0 12px 0 #080a10, 0 16px 14px rgba(0, 0, 0, 0.55);
+  transform: translateY(-10px);
+  transition: transform 0.12s, box-shadow 0.12s, background 0.2s;
+}
+.tecla img { width: 56%; height: auto; transform: rotateZ(32deg); pointer-events: none; }
+.tecla:hover .tecla__cara,
+.tecla.activa .tecla__cara {
+  transform: translateY(0);
+  box-shadow: 0 1px 0 #2a3144, 0 2px 0 #080a10, 0 4px 6px rgba(0, 0, 0, 0.55);
+  background: radial-gradient(circle at 50% 40%, #2c3550, #1a2030 70%);
+}
 
 /* ---------- 6. Teléfono: ajustes para pantallas angostas ---------- */
 @media (max-width: 640px) {
 .encabezado { gap: 10px; padding: 6px 6px 6px 14px; }
 .encabezado__menu { gap: 0; } 
 .encabezado__menu a { padding: 8px 12px; font-size: 0.85rem; }
-.teclado { grid-template-columns: repeat(4, 1fr); gap: 10px; padding: 16px; }
+.tecnologias { grid-template-columns: 1fr; }
+.escena { padding: 10px 0 30px; }
+.teclado { width: 74%; padding: 14px; gap: 9px; }
 }
