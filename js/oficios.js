@@ -1,4 +1,4 @@
-const oficios = ['paginas web', 'bots con IA', 'soporte tecnico remoto'];
+const oficios = ['páginas web', 'bots con IA', 'soporte técnico remoto'];
 const texto = document.querySelector('#oficio');
 let cual = 0;
 let letras = 0; 
