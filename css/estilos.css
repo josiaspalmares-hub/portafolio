@@ -104,6 +104,21 @@ a { color: inherit; }
   color: var(--texto-2);
 }
 
+/* LECCIÓN 3 · subtítulo que se escribe solo (el JavaScript cambia el texto del <span>) */
+.hero__oficio {
+  margin: 24px 0 0;
+  font-size: clamp(1.25rem, 1rem + 1.2vw, 1.75rem);
+  color: var(--texto);
+}
+.hero__oficio span { color: var(--azul); }
+/* La rayita que parpadea después del texto, como el cursor al escribir */
+.hero__oficio span::after {
+  content: '|';
+  margin-left: 2px;
+  animation: parpadeo 1s steps(1) infinite;
+}
+@keyframes parpadeo { 50% { opacity: 0; } }
+
 /* ---------- 5. Botones ---------- */
 .boton {
   display: inline-flex;
