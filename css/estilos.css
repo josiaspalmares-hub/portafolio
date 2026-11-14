@@ -135,7 +135,7 @@ transition: transform 0.2s, background-color 0.2s;}
 .boton:hover { background: #4b80ff; transform: translateY(-2px); }
 
   /* ---------- 5. Trabajos ---------- */
- .trabajos { padding: 100px var(--margen); max-width: 1200px; }
+ .trabajos, .servicios { padding: 100px var(--margen); max-width: 1200px; }
  .seccion__titulo {
  margin: 0 0 40px;
  font-size: clamp(2rem, 1.4rem + 3vw, 3.5rem);
@@ -170,6 +170,27 @@ transition: transform 0.3s, border-color 0.3s;
 .trabajos__nota { margin: 32px 0 0; color: var(--texto-2); }
 .trabajos__nota strong { color: var(--texto); }
 .trabajos__nota a { color: var(--azul); font-weight: 500; text-decoration: none; }
+
+ /* ---------- 6. Servicios ---------- */
+ .servicios__lista {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;}
+.servicio {
+padding: 28px;
+background: var(--fondo-2);
+border: 1px solid var(--linea);
+border-radius: 20px;
+transition: border-color 0.3s, background-color 0.3s;}
+.servicio:hover { border-color: var(--azul); background: #1a2030; }
+.servicio__icono {
+width: 52px;
+height: 52px;
+padding: 12px;
+border-radius: 14px;
+background: rgba(47, 107, 255, 0.12)}
+.servicio__nombre { margin: 20px 0 8px; font-size: 1.25rem; }
+.servicio__texto { margin: 0; font-size: 0.95rem; color: var(--texto-2); }
 
 /* ---------- 6. Teléfono: ajustes para pantallas angostas ---------- */
 @media (max-width: 640px) {
