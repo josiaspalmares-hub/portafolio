@@ -1,29 +1,22 @@
-/* =====================================================================
-   ESTILOS DEL PORTAFOLIO
-   CSS = cómo se ve cada cosa. Se lee así:
-     selector { propiedad: valor; }
-   El selector dice A QUÉ se aplica (.hero = todo lo que tenga class="hero").
-   ===================================================================== */
+/* Estilos del portafolio */
 
-/* ---------- 1. Colores y medidas de la marca (sacados de tu logo JP) ----------
-   Se guardan una vez en "variables" (--nombre) y se usan en todo el archivo con var(--nombre).
-   Si mañana quieres otro azul, lo cambias solo aquí. */
+/* ---------- 1. Colores y medidas (del logo JP) ---------- */
 :root {
-  --fondo: #0e1118;       /* casi negro, el fondo del logo */
-  --fondo-2: #161a24;     /* un poquito más claro, para tarjetas */
-  --texto: #f4f6fa;       /* blanco del logo */
-  --texto-2: #9aa3b5;     /* gris para textos secundarios */
-  --azul: #2f6bff;        /* el punto azul del logo: se usa poco, para lo importante */
-  --azul-claro: #6f97ff;  /* para textos pequeños en azul: se lee mejor sobre el negro */
+  --fondo: #0e1118;
+  --fondo-2: #161a24;
+  --texto: #f4f6fa;
+  --texto-2: #9aa3b5;
+  --azul: #2f6bff;        /* solo para lo importante */
+  --azul-claro: #6f97ff;  /* textos pequeños: más contraste */
   --linea: rgba(244, 246, 250, 0.12);
 
   --letra: 'Space Grotesk', system-ui, sans-serif;
   --letra-elegante: 'Instrument Serif', Georgia, serif;
 
-  --margen: clamp(20px, 5vw, 64px); /* clamp = mínimo, ideal, máximo: se adapta al ancho de la pantalla */
+  --margen: clamp(20px, 5vw, 64px);
 }
 
-/* ---------- 2. Base: lo que aplica a toda la página ---------- */
+/* ---------- 2. Base ---------- */
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -67,12 +60,11 @@ a { color: inherit; }
 .encabezado__menu a:hover{
   color: var(--texto);
   background: rgba(244,246,250, 0.08);}
-/* ---------- 4. Portada (LECCIÓN 1) ----------
-   Estas clases ya están listas para lo que vas a escribir en el HTML. */
+/* ---------- 4. Portada ---------- */
 .hero {
-  min-height: 100vh;        /* 100vh = alto completo de la pantalla */
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;   /* los hijos uno debajo del otro */
+  flex-direction: column;
   justify-content: center;
   padding: 120px var(--margen) 80px;
   max-width: 1200px;
@@ -80,8 +72,8 @@ a { color: inherit; }
 .hero__etiqueta {
   margin: 0 0 20px;
   font-size: 0.85rem;
-  letter-spacing: 0.2em;    /* separación entre letras */
-  text-transform: uppercase;/* todo en mayúsculas */
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
   color: var(--azul-claro);
 }
 .hero__titulo {
@@ -91,7 +83,7 @@ a { color: inherit; }
   font-weight: 700;
   letter-spacing: -0.03em;
 }
-/* <em> dentro del título: la palabra en letra elegante cursiva (la mezcla que viste en Lando Norris) */
+/* Palabra en cursiva del título */
 .hero__titulo em {
   font-family: var(--letra-elegante);
   font-weight: 400;
@@ -105,14 +97,14 @@ a { color: inherit; }
   color: var(--texto-2);
 }
 
-/* LECCIÓN 3 · subtítulo que se escribe solo (el JavaScript cambia el texto del <span>) */
+/* Subtítulo que se escribe solo */
 .hero__oficio {
   margin: 24px 0 0;
   font-size: clamp(1.25rem, 1rem + 1.2vw, 1.75rem);
   color: var(--texto);
 }
 .hero__oficio span { color: var(--azul); }
-/* La rayita que parpadea después del texto, como el cursor al escribir */
+/* Cursor que parpadea */
 .hero__oficio span::after {
   content: '|';
   margin-left: 2px;
@@ -128,7 +120,7 @@ gap: 10px;
 width: fit-content;
 padding: 16px 28px;
 border-radius: 999px;
-background: #2559e8;  /* un azul un poquito más oscuro para que la letra blanca se lea bien */
+background: #2559e8;  /* más oscuro para el contraste */
 color: #fff;
 font-weight: 500;
 text-decoration: none;
@@ -193,7 +185,7 @@ background: rgba(47, 107, 255, 0.12)}
 .servicio__nombre { margin: 20px 0 8px; font-size: 1.25rem; }
 .servicio__texto { margin: 0; font-size: 0.95rem; color: var(--texto-2); }
 
-/* ---------- 7. Teclado de tecnologías (3D de lado, como un teclado real) ---------- */
+/* ---------- 7. Teclado de tecnologías ---------- */
 .tecnologias { display: grid; grid-template-columns: 1fr 1.3fr; align-items: center; gap: 40px; }
 .tecnologias__nombre {
   margin: 0;
@@ -218,8 +210,7 @@ background: rgba(47, 107, 255, 0.12)}
   transform: rotateX(52deg) rotateZ(-32deg);
   transform-style: preserve-3d;
 }
-/* La tecla (li) es el área que detecta el mouse y no se mueve; la cara es lo que se ve y se hunde.
-   Si se hundiera la tecla entera, se saldría de debajo del mouse y parpadearía. */
+/* Solo se hunde la cara: si se hundiera la tecla, saldría de debajo del mouse y parpadearía */
 .tecla { aspect-ratio: 1; cursor: pointer; }
 .tecla__cara {
   width: 100%;
@@ -272,9 +263,9 @@ transform: translate(-999px, -999px);
 transition: transform 0.15s ease-out;}
 @media (hover: none) { .brillo { display: none; } }
 
-/* ---------- 9. Contacto y pie (Lección 8) ---------- */
+/* ---------- 9. Contacto y pie ---------- */
 .contacto { padding: 140px var(--margen) 120px; max-width: 1200px; }
-/* La frase gigante de cierre, con la palabra final en la letra elegante */
+/* Frase de cierre */
 .contacto__frase {
   margin: 0;
   font-size: clamp(3rem, 1rem + 8vw, 8rem);
@@ -285,7 +276,7 @@ transition: transform 0.15s ease-out;}
 .contacto__frase em { font-family: var(--letra-elegante); font-weight: 400; text-transform: none; color: var(--azul); }
 .contacto__texto { max-width: 36rem; margin: 32px 0 40px; font-size: 1.15rem; color: var(--texto-2); }
 .contacto__acciones { display: flex; flex-wrap: wrap; gap: 14px; }
-/* Botón secundario: mismo tamaño que el azul, pero solo con borde */
+/* Botón con borde */
 .boton--borde { background: transparent; border: 1px solid var(--linea); color: var(--texto); }
 .boton--borde:hover { background: rgba(244, 246, 250, 0.06); border-color: var(--texto-2); }
 
@@ -303,7 +294,7 @@ transition: transform 0.15s ease-out;}
 .pie a { text-decoration: none; transition: color 0.2s; }
 .pie a:hover { color: var(--texto); }
 
-/* ---------- 6. Teléfono: ajustes para pantallas angostas ---------- */
+/* ---------- 10. Teléfono ---------- */
 @media (max-width: 640px) {
 .encabezado { gap: 10px; padding: 6px 6px 6px 14px; }
 .encabezado__menu { gap: 0; } 

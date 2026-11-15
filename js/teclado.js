@@ -1,4 +1,4 @@
-// Teclado de tecnologías: al pasar el mouse (o tocar en el teléfono) una tecla, su nombre aparece en grande.
+// Teclado de tecnologías
 const nombre = document.querySelector('.tecnologias__nombre');
 const teclas = document.querySelectorAll('.tecla');
 
