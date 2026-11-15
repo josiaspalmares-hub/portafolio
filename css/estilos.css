@@ -165,25 +165,27 @@ transition: transform 0.3s, border-color 0.3s;
 .trabajos__nota a { color: var(--azul-claro); font-weight: 500; text-decoration: none; }
 
  /* ---------- 6. Servicios ---------- */
- .servicios__lista {
- display: grid;
- grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;}
+.servicios__lista { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--texto-2); }
 .servicio {
-padding: 28px;
-background: var(--fondo-2);
-border: 1px solid var(--linea);
-border-radius: 20px;
-transition: border-color 0.3s, background-color 0.3s;}
-.servicio:hover { border-color: var(--azul); background: #1a2030; }
-.servicio__icono {
-width: 52px;
-height: 52px;
-padding: 12px;
-border-radius: 14px;
-background: rgba(47, 107, 255, 0.12)}
-.servicio__nombre { margin: 20px 0 8px; font-size: 1.25rem; }
+display: grid;
+grid-template-columns: 64px minmax(0, 0.9fr) minmax(0, 1.3fr) 230px;
+align-items: baseline;
+gap: 24px;
+padding: 28px 0;
+border-bottom: 1px solid var(--linea);
+transition: padding-left 0.35s ease;}
+.servicio:hover { padding-left: 12px; }
+.servicio__numero { font-size: 0.9rem; font-weight: 700; color: var(--texto-2); transition: color 0.3s; }
+.servicio:hover .servicio__numero { color: var(--azul-claro); }
+.servicio__nombre { margin: 0; font-size: clamp(1.4rem, 1rem + 1.2vw, 2rem); line-height: 1.1; }
 .servicio__texto { margin: 0; font-size: 0.95rem; color: var(--texto-2); }
+.servicio__prueba { margin: 0; font-size: 0.9rem; color: var(--texto-2); text-align: right; }
+.servicio__prueba a { color: var(--azul-claro); font-weight: 500; text-decoration: none; }
+.servicio__prueba a:hover { text-decoration: underline; }
+@media (max-width: 760px) {
+.servicio { grid-template-columns: 40px 1fr; gap: 8px 16px; }
+.servicio__texto, .servicio__prueba { grid-column: 2; text-align: left; }
+.servicio:hover { padding-left: 0; }}
 
 /* ---------- 7. Teclado de tecnologías ---------- */
 .tecnologias { display: grid; grid-template-columns: 1fr 1.3fr; align-items: center; gap: 40px; }
@@ -232,7 +234,7 @@ background: rgba(47, 107, 255, 0.12)}
   background: radial-gradient(circle at 50% 40%, #2c3550, #1a2030 70%);
 }
 
- /* ---------- 8. Pantalla de carga y brillo ---------- */
+ /* ---------- 8. Pantalla de carga ---------- */
 .carga {
 position: fixed;
 inset: 0;
@@ -248,20 +250,6 @@ transition: opacity 0.6s, visibility 0.6s;}
 .carga.oculta { opacity: 0; visibility: hidden; }
 @keyframes latido {
 50% { transform: scale(1.12); filter: drop-shadow(0 0 18px var(--azul)); }}
-.brillo {
-position: fixed;
-top: 0;
-left: 0;
-z-index: -1;
-width: 500px;
-height: 500px;
-margin: -250px 0 0 -250px;
-border-radius: 50%;
-background: radial-gradient(circle, rgba(47, 107, 255, 0.18), transparent 65%);
-pointer-events: none;
-transform: translate(-999px, -999px);
-transition: transform 0.15s ease-out;}
-@media (hover: none) { .brillo { display: none; } }
 
 /* ---------- 9. Contacto y pie ---------- */
 .contacto { padding: 140px var(--margen) 120px; max-width: 1200px; }
