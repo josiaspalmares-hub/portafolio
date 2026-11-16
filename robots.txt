@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://josias-palmares.vercel.app/sitemap.xml
