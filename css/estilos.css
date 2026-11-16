@@ -137,8 +137,13 @@ transition: transform 0.2s, background-color 0.2s;}
 .seccion__titulo em { font-family: var(--letra-elegante); font-weight: 400; color: var(--azul); }
 .trabajos__lista {
 display: grid;
-grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 gap: 24px;
+}
+@media (min-width: 1000px) {
+.trabajos__lista { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.tarjeta--real { grid-column: span 2; }
+.tarjeta--real .tarjeta__foto { aspect-ratio: 16 / 7.4; }
 }
 .tarjeta {
   background: var(--fondo-2);
@@ -282,14 +287,99 @@ transition: opacity 0.6s, visibility 0.6s;}
 .pie a { text-decoration: none; transition: color 0.2s; }
 .pie a:hover { color: var(--texto); }
 
+.solo-lector { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* Origen y caso de cada trabajo */
+.tarjeta__origen { margin: 20px 20px 0; font-size: 0.85rem; color: var(--texto-2); }
+.tarjeta--real .tarjeta__origen { color: var(--texto); font-weight: 500; }
+.tarjeta--real .tarjeta__origen::before { content: ''; display: inline-block; width: 8px; height: 8px; margin-right: 8px; border-radius: 50%; background: var(--azul); }
+.tarjeta__origen + .tarjeta__tipo { margin-top: 4px; }
+.caso { display: grid; grid-template-columns: 58px 1fr; gap: 6px 10px; margin: 14px 20px 0; font-size: 0.92rem; }
+.caso dt { color: var(--texto-2); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; padding-top: 3px; }
+.caso dd { margin: 0; color: var(--texto); }
+
+/* ---------- 11. Precios ---------- */
+.precios, .proceso, .sobre, .preguntas { padding: 100px var(--margen); max-width: 1200px; }
+.precios__intro { max-width: 36rem; margin: -16px 0 48px; color: var(--texto-2); font-size: 1.05rem; }
+.paquetes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--texto-2); }
+.paquete { display: flex; flex-direction: column; padding: 32px 28px 36px 0; }
+.paquete + .paquete { padding-left: 28px; border-left: 1px solid var(--linea); }
+.paquete__nombre { margin: 0; font-size: 1.15rem; font-weight: 500; }
+.paquete__precio { margin: 14px 0 0; font-family: var(--letra-elegante); font-size: clamp(3rem, 2rem + 3vw, 4.5rem); line-height: 1; }
+.paquete__precio span { font-family: var(--letra); font-size: 0.95rem; color: var(--texto-2); margin-right: 6px; vertical-align: middle; }
+.paquete__para { margin: 16px 0 0; color: var(--texto-2); }
+.paquete__incluye { margin: 20px 0 28px; padding: 0; list-style: none; display: grid; gap: 8px; font-size: 0.95rem; }
+.paquete__incluye li::before { content: '—'; margin-right: 10px; color: var(--azul-claro); }
+.paquete__accion { margin-top: auto; font-weight: 500; text-decoration: none; color: var(--azul-claro); }
+.paquete__accion:hover { text-decoration: underline; }
+.paquete--destacado .paquete__precio { color: var(--azul); }
+
+.mensual { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.6fr); gap: 40px; margin-top: 72px; padding: 36px; background: var(--fondo-2); border: 1px solid var(--linea); border-radius: 20px; }
+.mensual__texto h3 { margin: 0; font-size: 1.5rem; }
+.mensual__texto p { margin: 12px 0 0; color: var(--texto-2); }
+.mensual__tabla { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+.mensual__tabla th, .mensual__tabla td { padding: 14px 12px; border-bottom: 1px solid var(--linea); text-align: left; vertical-align: top; }
+.mensual__tabla tr:last-child > * { border-bottom: 0; }
+.mensual__tabla th { font-weight: 500; white-space: nowrap; }
+.mensual__tabla td { color: var(--texto-2); }
+.mensual__tabla .mensual__precio { color: var(--texto); font-weight: 700; white-space: nowrap; text-align: right; }
+.mensual__precio span { color: var(--texto-2); font-weight: 400; }
+
+/* ---------- 12. Cómo trabajo ---------- */
+.pasos { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0; counter-reset: paso; }
+.paso { position: relative; padding: 28px 20px 0 0; border-top: 2px solid var(--linea); }
+.paso::before { content: ''; position: absolute; top: -7px; left: 0; width: 12px; height: 12px; border-radius: 50%; background: var(--fondo); border: 2px solid var(--azul); }
+.paso:last-child::before { background: var(--azul); }
+.paso__dia { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--azul-claro); }
+.paso h3 { margin: 8px 0 0; font-size: 1.2rem; }
+.paso p { margin: 8px 0 0; font-size: 0.93rem; color: var(--texto-2); }
+.proceso__nota { margin: 40px 0 0; font-size: 0.9rem; color: var(--texto-2); }
+
+/* ---------- 13. Sobre mí ---------- */
+.sobre__texto { max-width: 44rem; display: grid; gap: 18px; font-size: 1.15rem; }
+.sobre__texto p { margin: 0; color: var(--texto-2); }
+.sobre__texto p:first-child { color: var(--texto); font-size: clamp(1.4rem, 1rem + 1.4vw, 2rem); line-height: 1.3; }
+
+/* ---------- 14. Preguntas ---------- */
+.preguntas__lista { max-width: 52rem; border-top: 1px solid var(--texto-2); }
+.preguntas details { border-bottom: 1px solid var(--linea); }
+.preguntas summary { display: flex; justify-content: space-between; gap: 20px; padding: 22px 0; font-size: 1.15rem; font-weight: 500; cursor: pointer; list-style: none; }
+.preguntas summary::-webkit-details-marker { display: none; }
+.preguntas summary::after { content: '+'; color: var(--azul-claro); font-size: 1.4rem; line-height: 1; transition: transform 0.25s; }
+.preguntas details[open] summary::after { transform: rotate(45deg); }
+.preguntas summary:focus-visible { outline: 2px solid var(--azul-claro); outline-offset: 4px; }
+.preguntas details p { margin: 0 0 22px; max-width: 42rem; color: var(--texto-2); }
+
+@media (max-width: 900px) {
+  .paquetes { grid-template-columns: 1fr; }
+  .paquete, .paquete + .paquete { padding: 28px 0 32px; border-left: 0; }
+  .paquete + .paquete { border-top: 1px solid var(--linea); }
+  .mensual { grid-template-columns: 1fr; gap: 20px; padding: 24px; }
+  .pasos { grid-template-columns: 1fr; gap: 0; }
+  .paso { padding: 0 0 28px 28px; border-top: 0; border-left: 2px solid var(--linea); }
+  .paso::before { top: 0; left: -7px; }
+  .paso:last-child { padding-bottom: 0; }
+}
+@media (max-width: 560px) {
+  .mensual__tabla, .mensual__tabla tbody, .mensual__tabla tr, .mensual__tabla th, .mensual__tabla td { display: block; }
+  .mensual__tabla tr { display: grid; grid-template-columns: 1fr auto; padding: 14px 0; border-bottom: 1px solid var(--linea); }
+  .mensual__tabla tr:last-child { border-bottom: 0; }
+  .mensual__tabla th, .mensual__tabla td { padding: 0; border: 0; }
+  .mensual__tabla td:not(.mensual__precio) { grid-column: 1 / -1; grid-row: 2; margin-top: 4px; }
+}
+
 /* ---------- 10. Teléfono ---------- */
 @media (max-width: 640px) {
 .encabezado { gap: 10px; padding: 6px 6px 6px 14px; }
 .encabezado__menu { gap: 0; } 
 .encabezado__menu a { padding: 8px 12px; font-size: 0.85rem; }
+.hero__oficio span { color: var(--azul-claro); }
 .tecnologias { grid-template-columns: 1fr; }
 .escena { padding: 10px 0 30px; }
 .teclado { width: 74%; padding: 14px; gap: 9px; }
 .pie { flex-direction: column; text-align: center; }
 .pie p { flex: none; }
+}
+@media (max-width: 420px) {
+.encabezado__menu a[href="#servicios"] { display: none; }
 }

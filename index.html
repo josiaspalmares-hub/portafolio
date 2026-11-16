@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Josías Palmares · Webs, bots y soporte técnico</title>
-    <meta name="description" content="Hago páginas web, bots y soporte técnico remoto para negocios en Caracas y donde estés." />
+    <meta name="description" content="Páginas web para negocios en Caracas y donde estés: landings desde $150, webs de negocio y reservas o tiendas con panel. Precios claros, contrato y entrega con todo." />
+    <link rel="canonical" href="https://josias-palmares.vercel.app/" />
     <link rel="icon" href="img/logo-jp.svg" />
     <!-- Vista previa al compartir -->
     <meta property="og:type" content="website" />
@@ -35,6 +36,7 @@
       <nav class="encabezado__menu" aria-label="Menú principal">
         <a href="#trabajos">Trabajos</a>
         <a href="#servicios">Servicios</a>
+        <a href="#precios">Precios</a>
         <a href="#contacto">Contacto</a>
       </nav>
     </header>
@@ -55,40 +57,61 @@
 <h2 class="seccion__titulo">Trabajos <em>recientes</em></h2>
 <div class="trabajos__lista"> 
 
-  <article class="tarjeta">
+  <article class="tarjeta tarjeta--real">
 <img class="tarjeta__foto" src="img/trabajos/goldhour.webp" alt="Página de inicio de Goldhour" loading="lazy">
+<p class="tarjeta__origen">Negocio real · mi perfumería</p>
 <p class="tarjeta__tipo"> Tienda online · Astro y Supabase</p>
 <h3 class="tarjeta__nombre">Goldhour</h3>
-<p class="tarjeta__texto">Perfumería en Caracas: catálogo de más de 300 perfumes, recomendador y pedidos por WhatsApp.</p>
+<dl class="caso">
+<dt>Antes</dt><dd>La lista de precios se mandaba por WhatsApp a cada persona.</dd>
+<dt>Hice</dt><dd>Catálogo de más de 300 perfumes con precio en $ y Bs, recomendador, pedidos por WhatsApp y panel para cambiar precios.</dd>
+<dt>Ahora</dt><dd>El pedido llega armado y la portada carga en 1,1 s con datos móviles.</dd>
+</dl>
 <a class="tarjeta__enlace" href="https://goldhourparfums.vercel.app" target="_blank" rel="noopener">Ver la web →</a>
 </article>
 
 <article class="tarjeta">
 <img class="tarjeta__foto" src="img/trabajos/carbon-black.webp" alt="Página de inicio de Carbon Black" loading="lazy">
+<p class="tarjeta__origen">Proyecto de muestra</p>
 <p class="tarjeta__tipo">Restaurante · 3D con Three.js</p>
 <h3 class="tarjeta__nombre">Carbon Black</h3>
-<p class="tarjeta__texto">Parrilla a las brasas: un carbón en 3D que prende llamas, menú con fichas y reservas por WhatsApp.</p>
+<dl class="caso">
+<dt>Reto</dt><dd>El menú en PDF que nadie abre en el teléfono.</dd>
+<dt>Hice</dt><dd>Un carbón en 3D que prende llamas, menú con fichas de cada corte y reservas por WhatsApp.</dd>
+<dt>Ahora</dt><dd>El menú se ve en 1 s y la reserva sale en un toque.</dd>
+</dl>
 <a class="tarjeta__enlace" href="https://carbon-black-parrilla.vercel.app" target="_blank" rel="noopener">Ver la web →</a>
 </article>
 
 <article class="tarjeta">
 <img class="tarjeta__foto" src="img/trabajos/kalle.webp" alt="Página de inicio de KALLE" loading="lazy">
+<p class="tarjeta__origen">Proyecto de muestra</p>
 <p class="tarjeta__tipo">Tienda · JavaScript y Supabase</p>
 <h3 class="tarjeta__nombre">KALLE</h3>
-<p class="tarjeta__texto">Ropa urbana y zapatos: rueda de looks, probador de outfits, vitrina con luz que sigue al cursor y precios en bolívares.</p>
+<dl class="caso">
+<dt>Reto</dt><dd>Vender ropa por Instagram sin poder ver cómo combina cada pieza.</dd>
+<dt>Hice</dt><dd>Rueda de looks, probador prenda por prenda, 20 pares de zapatos y precios en bolívares.</dd>
+<dt>Ahora</dt><dd>El outfit completo va al pedido en 3 toques; carga en 1,6 s.</dd>
+</dl>
 <a class="tarjeta__enlace" href="https://kalle-tienda.vercel.app" target="_blank" rel="noopener">Ver la web →</a>
 </article>
 
 <article class="tarjeta">
 <img class="tarjeta__foto" src="img/trabajos/filo.webp" alt="Página de inicio de FILO" loading="lazy">
+<p class="tarjeta__origen">Proyecto de muestra</p>
 <p class="tarjeta__tipo">Barbería · JavaScript y Supabase</p>
 <h3 class="tarjeta__nombre">FILO</h3>
-<p class="tarjeta__texto">Reservas reales en 5 pasos que solo muestran horas libres, antes y después que se arrastra y panel privado para el dueño.</p>
+<dl class="caso">
+<dt>Reto</dt><dd>Contestar "¿a qué hora tienes libre?" todo el día.</dd>
+<dt>Hice</dt><dd>Reservas reales en 5 pasos que solo muestran horas libres y un panel privado para el dueño.</dd>
+<dt>Ahora</dt><dd>El cliente reserva solo y el barbero ve su agenda del día.</dd>
+</dl>
 <a class="tarjeta__enlace" href="https://filo-barberia-caracas.vercel.app" target="_blank" rel="noopener">Ver la web →</a>
 </article>
 
 <article class="tarjeta"> 
 <img class="tarjeta__foto" src="img/trabajos/ultron.webp" alt="Panel de control de Ultron" loading="lazy"> 
+ <p class="tarjeta__origen">Proyecto personal</p>
  <p class="tarjeta__tipo">Asistente con IA · Python</p>
 <h3 class="tarjeta__nombre">Ultron</h3>
 <p class="tarjeta__texto">Mi asistente personal para Windows: voz, memoria propia y bot de Telegram sobre Gemini.</p>
@@ -131,7 +154,87 @@ También hice un <strong>bot de Telegram</strong> que calcula el pedaleo con las
 </ol>
 </section>
 
-<section class="tecnologias" id="tecnologias">
+<!-- Precios -->
+<section class="precios" id="precios">
+  <h2 class="seccion__titulo">Precios <em>claros</em></h2>
+  <p class="precios__intro">Precio desde el que arranca cada tipo de web. Después de la primera llamada te envío la propuesta exacta, sin sorpresas.</p>
+  <div class="paquetes">
+    <article class="paquete">
+      <h3 class="paquete__nombre">Landing</h3>
+      <p class="paquete__precio"><span>desde</span> $150</p>
+      <p class="paquete__para">Para darte a conocer y que te escriban: una página con quién eres, qué ofreces y tu WhatsApp.</p>
+      <ul class="paquete__incluye">
+        <li>Diseño propio con tu marca</li>
+        <li>Teléfono, tablet y computadora</li>
+        <li>Botón de WhatsApp, redes y mapa</li>
+        <li>Alta en Google</li>
+      </ul>
+      <a class="paquete__accion" href="https://wa.me/584223243034?text=Hola%20Jos%C3%ADas%2C%20me%20interesa%20una%20landing%20para%20mi%20negocio" target="_blank" rel="noopener">Quiero una landing →</a>
+    </article>
+    <article class="paquete paquete--destacado">
+      <h3 class="paquete__nombre">Web de negocio</h3>
+      <p class="paquete__precio"><span>desde</span> $300</p>
+      <p class="paquete__para">Para que te encuentren en Google y el cliente llegue sabiendo qué quiere y cuánto cuesta.</p>
+      <ul class="paquete__incluye">
+        <li>Todo lo de la landing</li>
+        <li>Servicios o menú con precios en $ y Bs</li>
+        <li>Preguntas frecuentes y ubicación</li>
+        <li>SEO básico y velocidad en verde</li>
+      </ul>
+      <a class="paquete__accion" href="https://wa.me/584223243034?text=Hola%20Jos%C3%ADas%2C%20me%20interesa%20una%20web%20para%20mi%20negocio" target="_blank" rel="noopener">Quiero una web →</a>
+    </article>
+    <article class="paquete">
+      <h3 class="paquete__nombre">Reservas, tienda o panel</h3>
+      <p class="paquete__precio"><span>desde</span> $600</p>
+      <p class="paquete__para">Para que el cliente reserve o pida solo, y tú lo manejes desde un panel sin pedirle nada a nadie.</p>
+      <ul class="paquete__incluye">
+        <li>Todo lo de la web de negocio</li>
+        <li>Citas, catálogo o pedidos en línea</li>
+        <li>Panel privado con tus datos</li>
+        <li>Seguridad y límite de intentos</li>
+      </ul>
+      <a class="paquete__accion" href="https://wa.me/584223243034?text=Hola%20Jos%C3%ADas%2C%20me%20interesa%20una%20web%20con%20reservas%20o%20tienda" target="_blank" rel="noopener">Quiero reservas o tienda →</a>
+    </article>
+  </div>
+
+  <div class="mensual">
+    <div class="mensual__texto">
+      <h3>Después de la entrega</h3>
+      <p>La web es tuya y te enseño a usarla. Si prefieres que yo me encargue, hay un plan mensual que se cancela cuando quieras.</p>
+    </div>
+    <table class="mensual__tabla">
+      <caption class="solo-lector">Planes mensuales</caption>
+      <tbody>
+        <tr><th scope="row">Básico</th><td>Revisión de que todo funcione, copias de seguridad y arreglos</td><td class="mensual__precio">$20 <span>/ mes</span></td></tr>
+        <tr><th scope="row">Cambios</th><td>Lo del básico y hasta 4 cambios al mes: textos, fotos y precios</td><td class="mensual__precio">$40 <span>/ mes</span></td></tr>
+        <tr><th scope="row">Crecimiento</th><td>Lo anterior y trabajo para subir en Google, con informe cada mes</td><td class="mensual__precio">$80 <span>/ mes</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Cómo trabajo -->
+<section class="proceso" id="proceso">
+  <h2 class="seccion__titulo">Cómo <em>trabajo</em></h2>
+  <ol class="pasos">
+    <li class="paso"><span class="paso__dia">Día 1</span><h3>Hablamos</h3><p>Una llamada de 20 minutos para entender tu negocio y qué sería un éxito para ti.</p></li>
+    <li class="paso"><span class="paso__dia">Día 1–2</span><h3>Propuesta y contrato</h3><p>Te envío qué incluye, cuánto cuesta y cuándo está. Arrancamos con el 50&nbsp;%.</p></li>
+    <li class="paso"><span class="paso__dia">Día 3–5</span><h3>Diseño</h3><p>Ves cómo va a quedar antes de que la construya, con 2 rondas de cambios.</p></li>
+    <li class="paso"><span class="paso__dia">Día 6–12</span><h3>La construyo</h3><p>La pruebo en teléfonos reales, con datos móviles y en Google.</p></li>
+    <li class="paso"><span class="paso__dia">Entrega</span><h3>Es tuya</h3><p>Pagas el otro 50&nbsp;% y recibes los accesos, el código y un video de cómo usarla. 30 días de garantía.</p></li>
+  </ol>
+  <p class="proceso__nota">Los días son para una web de negocio; una landing sale antes y una tienda puede tardar más.</p>
+</section>
+
+<!-- Sobre mí -->
+<section class="sobre" id="sobre-mi">
+  <h2 class="seccion__titulo">Sobre <em>mí</em></h2>
+  <div class="sobre__texto">
+    <p>Soy Josías, de Caracas. Empecé en soporte técnico arreglando computadoras, y de ahí pasé a hacer webs, bots y automatizaciones.</p>
+    <p>También tengo mi propio negocio, Goldhour, así que sé lo que es responder precios por WhatsApp todo el día. Por eso hago webs pensando en lo que le ahorran y le traen al dueño, no solo en que se vean bonitas.</p>
+    <p>Trabajo con contrato, te explico todo sin palabras raras y no desaparezco después de entregar.</p>
+  </div>
+</section>
       <div class="tecnologias__info">
         <h2 class="seccion__titulo">Con qué <em>trabajo</em></h2>
         <p class="tecnologias__nombre" aria-live="polite">JavaScript</p>
@@ -155,7 +258,18 @@ También hice un <strong>bot de Telegram</strong> que calcula el pedaleo con las
       </div>
     </section>
 
-
+    <!-- Preguntas frecuentes -->
+    <section class="preguntas" id="preguntas">
+      <h2 class="seccion__titulo">Preguntas <em>frecuentes</em></h2>
+      <div class="preguntas__lista">
+        <details><summary>¿Cuánto tarda?</summary><p>Una landing, de 5 a 7 días. Una web de negocio, unas 2 semanas. Con reservas o tienda, de 3 a 4 semanas. El tiempo empieza cuando tengo tus fotos, logo e información.</p></details>
+        <details><summary>¿El dominio va aparte?</summary><p>Sí. El .com cuesta unos $12 al año, lo pagas tú y queda a tu nombre. Yo me encargo de conectarlo. Publicar la web no tiene costo mensual en la mayoría de los casos.</p></details>
+        <details><summary>¿Puedo cambiar cosas después?</summary><p>Sí. Te dejo un video de cómo hacerlo y, si tu web tiene panel, cambias precios, fotos u horarios tú mismo. Si prefieres que lo haga yo, está el plan mensual.</p></details>
+        <details><summary>¿Aceptas pago en bolívares?</summary><p>Sí: Pago Móvil, transferencia, Zelle, Binance o efectivo. En bolívares, a la tasa del BCV del día del pago.</p></details>
+        <details><summary>¿Y si no me gusta el diseño?</summary><p>Primero te muestro cómo va a quedar y tienes 2 rondas de cambios antes de que lo construya. No arranco hasta que lo apruebes.</p></details>
+        <details><summary>¿Trabajas con negocios fuera de Venezuela?</summary><p>Sí, todo se hace en línea. Adapto los textos legales al país de tus clientes.</p></details>
+      </div>
+    </section>
 
     <!-- Contacto -->
     <section class="contacto" id="contacto">
