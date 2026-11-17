@@ -385,3 +385,15 @@ transition: opacity 0.6s, visibility 0.6s;}
 }
 .tarjeta__enlaces { display: flex; flex-wrap: wrap; gap: 0 4px; margin: 0; }
 .tarjeta__enlaces .tarjeta__enlace { margin-right: 12px; }
+
+/* ---------- Testimonio ---------- */
+.testimonio { padding: 40px var(--margen) 60px; max-width: 1200px; }
+.testimonio figure { margin: 0; padding-top: 32px; border-top: 1px solid var(--linea); }
+.testimonio__cita { margin: 0; max-width: 52rem; }
+.testimonio__cita p { margin: 0; font-family: var(--letra-elegante); font-size: clamp(1.6rem, 1.1rem + 2vw, 2.6rem); line-height: 1.25; }
+.testimonio__cita p::before { content: '“'; color: var(--azul); }
+.testimonio__cita p::after { content: '”'; color: var(--azul); }
+.testimonio__firma { margin-top: 20px; color: var(--texto-2); }
+.testimonio__firma strong { color: var(--texto); font-weight: 500; }
+.testimonio__firma a { color: var(--azul-claro); text-decoration: underline; text-underline-offset: 3px; }
+.testimonio__firma a:hover { text-decoration: underline; }
