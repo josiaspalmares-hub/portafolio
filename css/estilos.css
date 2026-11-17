@@ -413,3 +413,10 @@ main > section { margin-inline: auto; }
 @media (max-width: 640px) {
   .tecnologias__ficha { min-height: 12.5rem; }
 }
+
+/* Tarjeta ancha: ocupa toda la fila con la foto al lado */
+@media (min-width: 1000px) {
+  .tarjeta--ancha { grid-column: 1 / -1; display: grid; grid-template-columns: 1.2fr 1fr; }
+  .tarjeta--ancha .tarjeta__foto { height: 100%; aspect-ratio: auto; }
+  .tarjeta--ancha .tarjeta__cuerpo { padding-bottom: 8px; align-self: center; }
+}
