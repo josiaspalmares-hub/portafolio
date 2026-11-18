@@ -140,10 +140,18 @@ display: grid;
 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 gap: 24px;
 }
+/* Tablet: destacadas a lo ancho, el resto de a dos y la última sola, centrada */
+@media (min-width: 680px) and (max-width: 999px) {
+.trabajos__lista { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.trabajos__lista > .tarjeta { grid-column: span 2; }
+.trabajos__lista > .tarjeta--ancha { grid-column: 1 / -1; }
+.trabajos__lista > .tarjeta:last-child:nth-child(odd) { grid-column: 2 / span 2; }
+}
+/* Escritorio: las dos destacadas a lo ancho y el resto en filas parejas de 3 (la última, centrada) */
 @media (min-width: 1000px) {
-.trabajos__lista { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.tarjeta--real { grid-column: span 2; }
-.tarjeta--real .tarjeta__foto { aspect-ratio: 16 / 7.4; }
+.trabajos__lista { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.trabajos__lista > .tarjeta { grid-column: span 2; }
+.trabajos__lista > .tarjeta--centro { grid-column: 2 / span 2; }
 }
 .tarjeta {
   background: var(--fondo-2);
@@ -351,6 +359,9 @@ transition: opacity 0.6s, visibility 0.6s;}
 .preguntas details p { margin: 0 0 22px; max-width: 42rem; color: var(--texto-2); }
 
 @media (max-width: 900px) {
+  /* Tablet: el teclado 3D va debajo del texto; al lado se salía de la pantalla */
+  .tecnologias { grid-template-columns: 1fr; }
+  .teclado { width: min(74%, 420px); }
   .paquetes { grid-template-columns: 1fr; }
   .paquete, .paquete + .paquete { padding: 28px 0 32px; border-left: 0; }
   .paquete + .paquete { border-top: 1px solid var(--linea); }
@@ -416,7 +427,7 @@ main > section { margin-inline: auto; }
 
 /* Tarjeta ancha: ocupa toda la fila con la foto al lado */
 @media (min-width: 1000px) {
-  .tarjeta--ancha { grid-column: 1 / -1; display: grid; grid-template-columns: 1.2fr 1fr; }
+  .trabajos__lista > .tarjeta--ancha { grid-column: 1 / -1; display: grid; grid-template-columns: 1.2fr 1fr; }
   .tarjeta--ancha .tarjeta__foto { height: 100%; aspect-ratio: auto; }
   .tarjeta--ancha .tarjeta__cuerpo { padding-bottom: 8px; align-self: center; }
 }
